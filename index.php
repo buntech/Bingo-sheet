@@ -1,27 +1,10 @@
 <?php
 
-require_once(__DIR__ .);
+require_once(__DIR__ . '/config.php'); //ファイルの設定
+require_once(__DIR__ . '/Bingo.php'); //ビンゴに関するクラス
 
-$row = [];
-
-for ($a = 0; $a < 5; $a++) :
-  for ($b = 0; $b < 5; $b++) :
-    $row[$b][$a] = mt_rand($a * 15 + 1, ($a + 1) * 15);
-  endfor;
-endfor;
-
-// 解答例  非効率じゃね
-
-// $nums = [];
-
-// for ($i = 0; $i < 5; $i++) {
-//   $col = range($i * 15 + 1, $i * 15 + 15);
-//   shuffle($col);
-//   $nums[$i] = array_slice($col, 0, 5);
-// }
-
-
-$row[2][2] = "⭐️";
+$bingo = new \MyApp\Bingo(); //インスタンス  名前空間MyApp
+$row = $bingo->create();
 
 ?>
 
