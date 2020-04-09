@@ -6,6 +6,9 @@ require_once(__DIR__ . '/Bingo.php'); //ビンゴに関するクラス
 $bingo = new \MyApp\Bingo(); //インスタンス  名前空間MyApp
 $row = $bingo->create();
 
+// echo "表示$row[1][2]";
+// echo "表示{$row[1][2]}";
+
 ?>
 
 <!DOCTYPE html>
